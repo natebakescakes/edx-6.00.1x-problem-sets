@@ -25,8 +25,3 @@ def radiationExposure(start, stop, step):
         area += f(start + i * step) * step
 
     return area
-
-print (radiationExposure(0, 5, 1))
-print (radiationExposure(5, 11, 1))
-print (radiationExposure(0, 11, 1))
-print (radiationExposure(40, 100, 1.5))

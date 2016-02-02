@@ -1,5 +1,4 @@
 import unittest
-import math
 
 import ps_3_1
 
