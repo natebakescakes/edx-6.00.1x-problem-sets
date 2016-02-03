@@ -1,12 +1,19 @@
-balance = 5000
-annualInterestRate = 0.12
-monthlyPaymentRate = 0.02
+balance = 4842
+annualInterestRate = 0.2
+monthlyPaymentRate = 0.04
 
-for month in range(0, 12):
-    unpaid = (1 - monthlyPaymentRate) * balance
-    
+total_paid = 0
+
+for month in range(0, 12): # 12 months or 1 year
     print ('Month: %d' % (month + 1))
-    print ('Minimum monthly payment: %f' % round(monthlyPaymentRate * balance, 2))
-    print ('Remaining balance: %f' % round(balance, 2))
-    
+
+    total_paid += (monthlyPaymentRate * balance)
+    print ('Minimum monthly payment: %.2f' % (monthlyPaymentRate * balance))
+
+    unpaid = (1 - monthlyPaymentRate) * balance
     balance = unpaid * (1 + annualInterestRate / 12.0)
+
+    print ('Remaining balance: %.2f' % balance)
+
+print ('Total paid: %.2f' % total_paid)
+print ('Remaining balance: %.2f' % balance)
